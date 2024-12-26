@@ -40,20 +40,32 @@ test("Deve alterar o ano de fundação corretamente da biblioteca", function () 
     expect(anoFundacaoBiblioteca).toBe(1950);
 });
 
-test("Deve retornar TRUE: ano de fundação menor que 1980", function () {
+test("Deve retornar TRUE: ano de fundação menor que 1950", function () {
     const biblioteca = new Biblioteca("Biblioteca Municipal Félix Araújo", "11.222.333/4444-55", 1942);
     const ehPatrimonioHistorico = biblioteca.patrimonioHistorico();
     expect(ehPatrimonioHistorico).toBeTruthy();
 })
 
-test("Deve retornar FALSE: ano de fundação maior que 1980", function () {
+test("Deve retornar TRUE: ano de fundação menor que 1950", function () {
+    const biblioteca = new Biblioteca("Biblioteca Municipal Félix Araújo", "11.222.333/4444-55", 1949);
+    const ehPatrimonioHistorico = biblioteca.patrimonioHistorico();
+    expect(ehPatrimonioHistorico).toBeTruthy();
+})
+
+test("Deve retornar FALSE: ano de fundação maior que 1950", function () {
     const biblioteca = new Biblioteca("Biblioteca Municipal Félix Araújo", "11.222.333/4444-55", 1990);
     const ehPatrimonioHistorico = biblioteca.patrimonioHistorico();
     expect(ehPatrimonioHistorico).toBeFalsy();
 })
 
-test("Deve retornar FALSE: ano de fundação igual a 2022", function () {
-    const biblioteca = new Biblioteca("Biblioteca Municipal Félix Araújo", "11.222.333/4444-55", 1980);
+test("Deve retornar FALSE: ano de fundação igual a 1950", function () {
+    const biblioteca = new Biblioteca("Biblioteca Municipal Félix Araújo", "11.222.333/4444-55", 1951);
+    const ehPatrimonioHistorico = biblioteca.patrimonioHistorico();
+    expect(ehPatrimonioHistorico).toBeFalsy();
+})
+
+test("Deve retornar FALSE: ano de fundação igual a 1950", function () {
+    const biblioteca = new Biblioteca("Biblioteca Municipal Félix Araújo", "11.222.333/4444-55", 1950);
     const ehPatrimonioHistorico = biblioteca.patrimonioHistorico();
     expect(ehPatrimonioHistorico).toBeFalsy();
 })

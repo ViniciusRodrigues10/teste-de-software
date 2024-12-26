@@ -37,7 +37,7 @@ export default class Biblioteca {
     } 
 
     patrimonioHistorico(): Boolean {
-        if(this.anoFundacao < 1980) return true;
+        if(this.anoFundacao < 1950) return true;
         return false;
     }
 
